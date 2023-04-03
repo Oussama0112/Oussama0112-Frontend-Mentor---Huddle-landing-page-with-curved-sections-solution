@@ -1,0 +1,415 @@
+/* variable set */
+:root{
+    --main-pink:hsl(322, 100%, 66%);
+    --main-l-p:hsl(321, 100%, 78%);
+    --main-l-red:hsl(0, 100%, 63%);
+
+    --alt-d-cyan:hsl(192, 100%, 9%);
+    --alt-l-blue:hsl(207, 100%, 98%);
+
+    --p-clr:#777;
+
+    --ff-body: 'Open Sans', sans-serif;
+    --ff-h: 'Poppins', sans-serif;
+
+    --section-padding:6.25rem;
+
+    --main-transitions:0.4s
+  
+}
+/* css reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin/padding
+  */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--ff-body);
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    font-family: var(--ff-h);
+  }
+  p{
+    overflow-wrap: break-word;
+    font-size: 15px;
+    color: var(--p-clr);
+  }
+
+/* container--set */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+  /* my utilities */
+  .button{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 100vw;
+    cursor: pointer;
+    color: white;
+    background: var(--main-pink);
+    transition: var(--main-transitions);
+    text-transform: capitalize;
+  }
+  .button:hover{
+    background-color: var(--main-l-p);
+  }
+  .flex__spaced{
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex{
+    display: flex;
+  }
+  .flex__col{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .curve__top{
+    margin-top: var(--section-padding);
+    z-index: -1;
+    height: 200px;
+    background-image: url(images/bg-section-top-desktop-1.svg);
+    background-size: cover;
+  }
+  @media (max-width:767px) {
+    .curve__top{
+      background-image: url('images/bg-section-top-mobile-1.svg');
+    }
+  }
+  .curve__bottom{
+    margin-bottom: var(--section-padding);
+    z-index: -1;
+    height: 250px;
+    background-image: url(images/bg-section-bottom-desktop-1.svg);
+    background-size: cover;
+
+  }
+  @media (max-width:767px) {
+    .curve__bottom{
+      background-image: url('images/bg-section-bottom-mobile-1.svg');
+    }
+  }
+  .ft__curve{
+    position: relative;
+    margin-top: var(--section-padding);
+    z-index: -1;
+    margin-bottom: -5px;
+    height: 250px;
+    background-image: url(images/bg-footer-top-desktop.svg);
+    background-size: cover;
+  }
+  @media (max-width:767px) {
+    .ft__curve{
+      background-image: url('images/bg-footer-top-mobile.svg');
+    }
+  }
+
+  /* my main css */
+  /* header */
+header .container{
+    padding-block: 0.5rem;
+    align-items: center;
+}
+header a{
+    text-decoration: none;
+    display: block;
+    color: var(--main-l-p);
+    text-transform: capitalize;
+    border: 2px solid var(--main-l-p);
+    padding-inline: 10px;
+    border-radius: 100vw;
+    transition: var(--main-transitions);
+}
+header a:hover{
+    color: var(--main-pink);
+    border-color: var(--main-pink);
+}
+    /* landing */
+.landing{
+    padding-block: var(--section-padding);
+}
+.landing .container{
+    text-align: center;
+}
+.main-title{
+    line-height: 1.2;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+}
+.landing .container > p{
+    line-height: 1.3;
+}
+.landing .stats{
+    justify-content: center;
+    gap: 2rem;
+}
+@media (max-width:767px) {
+    .landing .stats{
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+.landing .stats .box{
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.landing .stats .box img{
+    width: fit-content;
+}
+.landing .stats .box h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.landing .stats .box p{
+    padding-top: 1rem;
+}
+/* <!-- start of the grow-together section --> */
+.grow{
+  padding-block: var(--section-padding);
+  background: var(--alt-l-blue);
+}
+.grow .container{
+  align-items: center;
+}
+@media (max-width:767px) {
+    .grow .container{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+.grow .container > *{
+    flex: 1;
+}
+.grow .contenue{
+  padding-block: 2rem;
+}
+.grow h2{
+  padding-bottom: 1rem;
+}
+/* <!-- start of the following conversation section --> */
+.folow{
+  padding-block: var(--section-padding);
+}
+.folow .container{
+  align-items: center;
+}
+@media (max-width:767px) {
+    .folow .container{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.folow .container > *{
+    flex: 1;
+}
+.folow .contenue{
+  padding-block: 2rem;
+}
+.folow h2{
+  padding-bottom: 1rem;
+}
+/* users section */
+.users{
+  padding-block: var(--section-padding);
+  background: var(--alt-l-blue);
+}
+.users .container{
+  align-items: center;
+}
+@media (max-width:767px) {
+    .users .container{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+.users .container > *{
+    flex: 1;
+}
+.users .contenue{
+  padding-block: 2rem;
+}
+.users h2{
+  padding-bottom: 1rem;
+}
+/* ready section */
+.ready{
+  padding-block: var(--section-padding);
+}
+.ready .container{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/*end ready section */
+/* start of the footer */
+footer{
+  padding-block: var(--section-padding);
+  background: var(--alt-d-cyan);
+  color: white;
+}
+footer .container{
+
+}
+footer .container > *{
+  flex: 1;
+}
+@media (max-width: 767px) {
+  footer .container{
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+}
+.contact p{
+  color:white
+}
+@media (max-width:767px) {
+  .contact{
+    align-items: center;
+    text-align: center;
+  }
+}
+.mobile span{
+  padding-left: 1rem;
+}
+.email span{
+  padding-left: 1rem;
+}
+footer .form{
+  text-align: center;
+}
+.form h2{
+  text-transform: capitalize;
+}
+.form p{
+  color: white;
+}
+form{
+  padding-inline: 3rem 2rem;
+}
+form input:not([type="submit"]){
+  padding: 0.5rem 1rem;
+  caret-color: var(--main-l-p);
+  display: block;
+  border-radius: 0.425rem;
+}
+form input:not([type="submit"]):focus{
+  outline: none;
+}
+form input:not([type="submit"])::placeholder{
+  text-transform: capitalize;
+  color: var(--p-clr);
+  text-align: center;
+}
+form input:focus::placeholder{
+  opacity: 0;
+}
+form input[type="submit"]{
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.825rem 2.225rem;
+  border-radius: 0.425rem;
+  font-weight: 700;
+  background: var(--main-pink);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: var(--main-transitions);
+}
+
+form input[type="submit"]:hover{
+  background-color: var(--main-l-p);
+}
+.media{
+  gap: 1rem;
+}
+
+.media span{
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.sign{
+  background-color: var(--alt-d-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  text-transform: capitalize;
+  padding: 2rem 3rem;
+  box-shadow: 0 0 10px gold;
+  font-weight: bold;
+}
+.sign span{
+  color: red;
+  display: block;
+}
